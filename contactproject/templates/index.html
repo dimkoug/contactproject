@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<div class="row mt-2">
+    <div class="card col-4 py-2 m-2">
+        <div class="card-header">
+            Contacts
+          </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"> <a href="{% url 'contacts:contact-list' %}">Contacts</a> </li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+        </ul>
+      </div>
+</div>
+
+
+
+{% endblock content %}

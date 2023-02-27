@@ -1,0 +1,10 @@
+.venv
+venv
+env
+.env
+__pycache__
+*.sqlite
+*.sqlite3
+settings_local.py
+migrations
+public

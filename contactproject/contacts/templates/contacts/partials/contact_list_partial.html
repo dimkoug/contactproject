@@ -1,0 +1,52 @@
+{% load core %}
+<div class="row py-2">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-stripped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Telephone</th>
+                <th>Email</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for obj in object_list %}
+              <tr>
+                <td>{{obj}}</td>
+                <td>
+                  <ul>
+                    {% for addr in obj.addresses.all %}
+                      <li>{{addr}}</li>
+                    {% endfor %}
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    {% for phone in obj.phones.all %}
+                      <li>{{phone}}</li>
+                    {% endfor %}
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    {% for email in obj.emails.all %}
+                      <li>{{email}}</li>
+                    {% endfor %}
+                  </ul>
+                </td>
+                <td>
+                  {% include 'partials/action_buttons.html' with obj=obj %}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include 'pagination.html' %}
